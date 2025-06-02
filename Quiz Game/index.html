@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="vanta-bg"></div>
+
+  <div class="quiz-container">
+    <h1>Welcome to the Quiz Game!</h1>
+
+    <div id="category-select">
+      <h3>Select a Category</h3>
+      <button class="category-btn" data-category="Countries">Countries</button>
+      <button class="category-btn" data-category="Animals">Animals</button>
+      <button class="category-btn" data-category="General Knowledge">General Knowledge</button>
+      <button class="category-btn" data-category="Current Affairs">Current Affairs</button>
+    </div>
+
+    <div id="quiz-box" class="hide">
+      <h3 id="category">Category</h3>
+      <div id="question">Question text here</div>
+      <div id="options"></div>
+      <div id="timer">Time left: <span id="time">10</span> seconds</div>
+      <button id="next-btn">Next</button>
+    </div>
+
+    <audio id="correct-sound" src="sounds/correct.mp3"></audio>
+    <audio id="wrong-sound" src="sounds/wrong.mp3"></audio>
+    <audio id="timeout-sound" src="sounds/timer.mp3"></audio>
+
+    <div id="result-box" class="hide">
+      <h2>Your Score: <span id="score"></span></h2>
+      <button onclick="location.reload()">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+  <script>
+    VANTA.GLOBE({
+      el: "#vanta-bg",
+      color: 0x3d94f6,
+      backgroundColor: 0x000000
+    });
+  </script>
+</body>
+</html>
